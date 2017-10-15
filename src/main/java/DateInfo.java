@@ -9,6 +9,7 @@ public class DateInfo {
 
     private int day;
 
+    //判断是不是闰年
     public boolean isLeapyear() {
         return ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0);
     }
@@ -50,5 +51,29 @@ public class DateInfo {
                 ", month=" + month +
                 ", day=" + day +
                 '}';
+    }
+
+    public int calculateDays() {
+        int[] days = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int countDays = year * 365;
+        //如果是闰年，天数是366
+        countDays += (year - 1) / 4 + 1;
+        countDays -= (year - 1) / 100 + 1;
+        countDays += (year - 1) / 400 + 1;
+
+        //求从这年元旦到 month 月 day 日共有多少天
+        for (int i = 1; i < month; ++i) {
+            countDays += days[i];
+        }
+        if (month > 2 && isLeapyear()) {
+            countDays++;
+        }
+        countDays += day;
+        return countDays;
+    }
+
+    //计算从0000/00/00一共有一个月
+    public int calculateMonths() {
+        return year * 12 + month;
     }
 }
