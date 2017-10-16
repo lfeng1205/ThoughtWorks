@@ -1,13 +1,14 @@
-import java.util.Date;
+package model;
 
 /**
  * Created by cyb on 2017/10/14.
+ * 汽车类，封装汽车的车牌号，购买日期等属性
  */
 public class Car {
 
     private String carNumber;//车牌号
 
-    private DateInfo dateInfo;//购买日期
+    private DateInfo purchaseDate;//购买日期
 
     private String carName;//车名
 
@@ -16,10 +17,9 @@ public class Car {
     private boolean isRepair;//是否大修
 
 
-
-    public Car(String carNumber, DateInfo dateInfo, String carName, int kilometer, boolean isRepair) {
+    public Car(String carNumber, DateInfo purchaseDate, String carName, int kilometer, boolean isRepair) {
         this.carNumber = carNumber;
-        this.dateInfo = dateInfo;
+        this.purchaseDate = purchaseDate;
         this.carName = carName;
         this.kilometer = kilometer;
         this.isRepair = isRepair;
@@ -59,18 +59,18 @@ public class Car {
     }
 
     public DateInfo getDateInfo() {
-        return dateInfo;
+        return purchaseDate;
     }
 
     public void setDateInfo(DateInfo dateInfo) {
-        this.dateInfo = dateInfo;
+        this.purchaseDate = dateInfo;
     }
 
     @Override
     public String toString() {
-        return "Car{" +
+        return "model.Car{" +
                 "carNumber='" + carNumber + '\'' +
-                ", dateInfo=" + dateInfo +
+                ", purchaseDate=" + purchaseDate +
                 ", carName='" + carName + '\'' +
                 ", kilometer=" + kilometer +
                 ", isRepair=" + isRepair +

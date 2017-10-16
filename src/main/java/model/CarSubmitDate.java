@@ -1,15 +1,19 @@
+package model;
+
 import java.util.Set;
 
 /**
  * Created by cyb on 2017/10/14.
+ * 此类封装汽车信息和提交日期
+ *
  */
-public class Information {
+public class CarSubmitDate {
 
     private Set<Car> set;
 
-    private DateInfo submitDate;
+    private DateInfo submitDate ;
 
-    public Information(Set<Car> set, DateInfo submitDate) {
+    public CarSubmitDate(Set<Car> set, DateInfo submitDate) {
         this.set = set;
         this.submitDate = submitDate;
     }

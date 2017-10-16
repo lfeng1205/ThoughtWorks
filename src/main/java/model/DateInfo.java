@@ -1,5 +1,8 @@
+package model;
+
 /**
  * Created by cyb on 2017/10/14.
+ * 日期信息类，封装日期的年月日等信息
  */
 public class DateInfo {
 
@@ -46,7 +49,7 @@ public class DateInfo {
 
     @Override
     public String toString() {
-        return "DateInfo{" +
+        return "model.DateInfo{" +
                 "year=" + year +
                 ", month=" + month +
                 ", day=" + day +
